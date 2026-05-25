@@ -5,6 +5,7 @@ import { useTheme } from "../hooks/useTheme";
 import { motion, AnimatePresence } from "framer-motion";
 import { Moon, Sun, ChevronDown, Check, Eye, Star } from "lucide-react";
 import HolographicAbout from "../components/portfolio/templates/Holographic/About";
+import Navbar from '../components/Navbar'
 
 /* ─────────────────────────────────────────────────────────
    Custom FilterSelect
@@ -290,6 +291,7 @@ export default function TemplateGallery() {
 
   return (
     <div className="min-h-screen bg-background text-foreground p-8 pt-24 transition-colors duration-300">
+      <Navbar />
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-4xl font-bold">Template Gallery</h1>
         {/* Theme Toggle */}
