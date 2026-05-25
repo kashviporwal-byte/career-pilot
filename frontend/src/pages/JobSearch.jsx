@@ -372,7 +372,7 @@ className="w-full pl-12 pr-10 py-4 bg-muted/50 border border-border rounded-xl t
                     <div className="flex justify-between items-start">
                       <div className="flex gap-4">
                         {/* Company Logo */}
-                        <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-border">
+                        <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center shrink-0 border border-border">
                           {job.employer_logo ? (
                             <img
                               src={job.employer_logo}

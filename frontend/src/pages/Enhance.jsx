@@ -147,9 +147,9 @@ const ImprovementCard = ({ improvement, index }) => {
           <p className="text-foreground font-medium">{improvement.issue}</p>
         </div>
         {expanded ? (
-          <ChevronUp className="w-5 h-5 text-muted-foreground ml-2 flex-shrink-0" />
+          <ChevronUp className="w-5 h-5 text-muted-foreground ml-2 shrink-0" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-muted-foreground ml-2 flex-shrink-0" />
+          <ChevronDown className="w-5 h-5 text-muted-foreground ml-2 shrink-0" />
         )}
       </div>
 
@@ -160,7 +160,7 @@ const ImprovementCard = ({ improvement, index }) => {
           className="mt-3 pt-3 border-t border-border"
         >
           <div className="flex items-start gap-2">
-            <Zap className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+            <Zap className="w-4 h-4 text-primary mt-0.5 shrink-0" />
             <p className="text-sm text-foreground">{improvement.suggestion}</p>
           </div>
         </motion.div>
@@ -232,7 +232,7 @@ const BulletAnalysisCard = ({ bullet, index }) => {
       <div className="cursor-pointer" onClick={() => setExpanded(!expanded)}>
         <div className="flex items-start justify-between gap-4">
           <p className="text-foreground text-sm flex-1">{bullet.original}</p>
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
             <span className={`text-xs px-2 py-1 rounded-lg border ${getScoreColor(bullet.score)}`}>
               {bullet.score}/10
             </span>
@@ -327,7 +327,7 @@ const SeniorTipCard = ({ tip, index }) => {
       className={`border rounded-xl p-4 ${getCategoryColor(tip.category)}`}
     >
       <div className="flex items-start gap-3">
-        <Icon className="w-5 h-5 mt-0.5 flex-shrink-0" />
+        <Icon className="w-5 h-5 mt-0.5 shrink-0" />
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-xs opacity-75 capitalize">{tip.category}</span>
@@ -709,7 +709,7 @@ export default function Enhance() {
                       transition={{ delay: 0.5 + index * 0.1 }}
                       className="flex items-start gap-2"
                     >
-                      <Award className="w-4 h-4 text-green-400 mt-1 flex-shrink-0" />
+                      <Award className="w-4 h-4 text-green-400 mt-1 shrink-0" />
                       <span className="text-foreground">{strength}</span>
                     </motion.li>
                   ))}
@@ -926,7 +926,7 @@ export default function Enhance() {
                             <ul className="space-y-1">
                               {comprehensiveAnalysis.competitiveEdge.standoutFactors.map((factor, i) => (
                                 <li key={i} className="text-sm text-amber-300 flex items-start gap-2">
-                                  <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                                  <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" />
                                   {factor}
                                 </li>
                               ))}
@@ -939,7 +939,7 @@ export default function Enhance() {
                             <ul className="space-y-1">
                               {comprehensiveAnalysis.competitiveEdge.differentiators.map((diff, i) => (
                                 <li key={i} className="text-sm text-foreground/80 flex items-start gap-2">
-                                  <ArrowRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-amber-400" />
+                                  <ArrowRight className="w-4 h-4 shrink-0 mt-0.5 text-amber-400" />
                                   {diff}
                                 </li>
                               ))}
