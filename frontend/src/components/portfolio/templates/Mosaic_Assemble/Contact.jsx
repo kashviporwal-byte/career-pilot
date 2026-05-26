@@ -13,14 +13,27 @@ const Contact = ({ socials = {} }) => (
       </p>
     </ScatterItem>
     <ScatterItem delay={0.4}>
-      <a
-        href={`mailto:${socials.email}`}
-        className="inline-flex items-center gap-3 px-8 py-4 bg-cyan-500 text-slate-950 rounded-xl font-bold text-lg hover:bg-cyan-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/35"
-      >
-        <Mail />
-        Say Hello
-        <ArrowRight size={20} />
-      </a>
+      {socials.email ? (
+        <a
+          href={`mailto:${socials.email}`}
+          className="inline-flex items-center gap-3 px-8 py-4 bg-cyan-500 text-slate-950 rounded-xl font-bold text-lg hover:bg-cyan-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/35"
+        >
+          <Mail />
+          Say Hello
+          <ArrowRight size={20} />
+        </a>
+      ) : (
+        <button
+          type="button"
+          aria-disabled="true"
+          disabled
+          className="inline-flex items-center gap-3 px-8 py-4 bg-cyan-500/40 text-slate-950/70 rounded-xl font-bold text-lg shadow-lg shadow-cyan-500/10 cursor-not-allowed opacity-70"
+        >
+          <Mail />
+          Say Hello
+          <ArrowRight size={20} />
+        </button>
+      )}
     </ScatterItem>
   </section>
 );

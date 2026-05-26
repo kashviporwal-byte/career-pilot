@@ -7,8 +7,8 @@ const Testimonials = ({ testimonials = [] }) => (
       <h2 className="text-4xl font-bold mb-12 text-center text-white">Words from Others</h2>
     </ScatterItem>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {testimonials.map((t) => (
-        <ScatterItem key={`${t?.name || 'testimonial'}-${t?.role || 'role'}`} delay={0.15}>
+      {testimonials.map((t, i) => (
+        <ScatterItem key={t?.id || `${t?.name || 'testimonial'}-${i}`} delay={i * 0.15}>
           <div className="p-8 bg-slate-900 border border-slate-800 rounded-2xl h-full flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-slate-900/90 hover:shadow-xl hover:shadow-cyan-500/10">
             <p className="text-slate-300 italic mb-8 text-lg">"{t.text}"</p>
             <div className="flex items-center gap-4">

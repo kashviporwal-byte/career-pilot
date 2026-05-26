@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 const Hero = ({ data = {}, socials = {} }) => {
   const titleLetters = (data.name || '').split('');
+  const letterOffsets = useMemo(
+    () =>
+      titleLetters.map(() => ({
+        y: Math.random() * 200 - 100,
+        x: Math.random() * 200 - 100,
+        rotate: Math.random() * 90,
+      })),
+    [titleLetters.length, data.name],
+  );
 
   return (
     <header className="min-h-screen flex flex-col items-center justify-center relative px-6 z-10">
@@ -14,9 +23,9 @@ const Hero = ({ data = {}, socials = {} }) => {
               key={`${letter}-${i}`}
               initial={{
                 opacity: 0,
-                y: Math.random() * 200 - 100,
-                x: Math.random() * 200 - 100,
-                rotate: Math.random() * 90,
+                y: letterOffsets[i]?.y ?? 0,
+                x: letterOffsets[i]?.x ?? 0,
+                rotate: letterOffsets[i]?.rotate ?? 0,
               }}
               animate={{ opacity: 1, y: 0, x: 0, rotate: 0 }}
               transition={{ duration: 0.8, delay: i * 0.05, type: 'spring', stiffness: 100 }}
