@@ -228,6 +228,15 @@ export default function HighScoreBoard() {
     }
   };
 
+  const handleResetGame = () => {
+    setUserScore(0);
+    setInitials(['A', 'A', 'A']);
+    setHasSubmitted(false);
+    setIsNewHighScore(false);
+    setHighlightedRowIndex(-1);
+    playRetroSound('beep', isMuted);
+  };
+
   return (
     <section className="w-full min-h-screen bg-[#070714] text-white py-16 px-4 md:px-8 font-vt323 relative overflow-hidden flex flex-col justify-center items-center">
       
@@ -590,20 +599,31 @@ export default function HighScoreBoard() {
 
                 {/* Submission Action */}
                 <div className="w-full md:w-auto flex-1">
-                  <button
-                    type="submit"
-                    disabled={hasSubmitted || userScore === 0}
-                    className={`
-                      w-full font-press-start py-4 px-6 rounded-none border-4 transition-all text-xs md:text-sm select-none cursor-pointer flex justify-center items-center gap-2
-                      ${hasSubmitted || userScore === 0
-                        ? 'bg-gray-800 border-gray-700 text-gray-500 cursor-not-allowed opacity-50' 
-                        : 'bg-yellow-400 border-cyan-400 text-black hover:bg-yellow-300 shadow-[0_4px_0_#ff00ff] hover:shadow-[0_2px_0_#ff00ff] hover:translate-y-0.5 active:translate-y-1'
-                      }
-                    `}
-                  >
-                    <Sparkles className="w-4 h-4 text-pink-600 shrink-0" />
-                    {hasSubmitted ? "SCORE SUBMITTED" : "LOCK IN HIGHSCORE"}
-                  </button>
+                  {hasSubmitted ? (
+                    <button
+                      type="button"
+                      onClick={handleResetGame}
+                      className="w-full font-press-start py-4 px-6 rounded-none border-4 bg-[#ff00ff] border-cyan-400 text-black hover:bg-[#ff00ff]/80 shadow-[0_4px_0_#00ffff] hover:shadow-[0_2px_0_#00ffff] hover:translate-y-0.5 active:translate-y-1 cursor-pointer flex justify-center items-center gap-2"
+                    >
+                      <Sparkles className="w-4 h-4 text-black shrink-0 animate-spin" />
+                      PLAY AGAIN
+                    </button>
+                  ) : (
+                    <button
+                      type="submit"
+                      disabled={userScore === 0}
+                      className={`
+                        w-full font-press-start py-4 px-6 rounded-none border-4 transition-all text-xs md:text-sm select-none cursor-pointer flex justify-center items-center gap-2
+                        ${userScore === 0
+                          ? 'bg-gray-800 border-gray-700 text-gray-500 cursor-not-allowed opacity-50' 
+                          : 'bg-yellow-400 border-cyan-400 text-black hover:bg-yellow-300 shadow-[0_4px_0_#ff00ff] hover:shadow-[0_2px_0_#ff00ff] hover:translate-y-0.5 active:translate-y-1'
+                        }
+                      `}
+                    >
+                      <Sparkles className="w-4 h-4 text-pink-600 shrink-0" />
+                      LOCK IN HIGHSCORE
+                    </button>
+                  )}
                 </div>
               </form>
 
