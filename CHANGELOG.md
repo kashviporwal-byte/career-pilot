@@ -1,3 +1,10 @@
+## [1.44.1](https://github.com/anurag3407/career-pilot/compare/v1.44.0...v1.44.1) (2026-05-27)
+
+
+### Bug Fixes
+
+* address quiz reveal review comments ([4ac6a64](https://github.com/anurag3407/career-pilot/commit/4ac6a641dff3c3685aaf72db21ebad08d13c19b5))
+
 # [1.44.0](https://github.com/anurag3407/career-pilot/compare/v1.43.1...v1.44.0) (2026-05-27)
 
 
