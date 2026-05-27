@@ -1,3 +1,10 @@
+## [1.33.1](https://github.com/anurag3407/career-pilot/compare/v1.33.0...v1.33.1) (2026-05-27)
+
+
+### Bug Fixes
+
+* resolve package conflicts and Matte Clay template syntax ([c356517](https://github.com/anurag3407/career-pilot/commit/c3565174a642d78828fdefd4de6b0f18010c6ed8))
+
 # [1.33.0](https://github.com/anurag3407/career-pilot/compare/v1.32.0...v1.33.0) (2026-05-27)
 
 
