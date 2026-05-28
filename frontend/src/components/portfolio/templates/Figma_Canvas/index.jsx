@@ -101,9 +101,7 @@ function CanvasFrame({ id, label, color, children, isSelected, onClick, style })
   );
 }
 
-function LayerItem({ label, color, isSelected, isVisible, onClick, onToggleVisibility, depth = 0 }) {
-  const [expanded, setExpanded] = useState(true);
-
+function LayerItem({ label, color, isSelected, isVisible, onClick, onToggleVisibility, hasChildren = false, isExpanded = true, onToggleExpanded, depth = 0 }) {
   return (
     <div
       className={`flex items-center gap-1.5 px-2 py-1 text-xs cursor-pointer transition-colors rounded-sm ${
@@ -112,12 +110,16 @@ function LayerItem({ label, color, isSelected, isVisible, onClick, onToggleVisib
       style={{ paddingLeft: `${8 + depth * 16}px` }}
       onClick={onClick}
     >
-      <button
-        onClick={(e) => { e.stopPropagation(); setExpanded(!expanded); }}
-        className="text-[#666] hover:text-[#ababab]"
-      >
-        {expanded ? <ChevronDown size={10} /> : <ChevronRight size={10} />}
-      </button>
+      {hasChildren ? (
+        <button
+          onClick={(e) => { e.stopPropagation(); onToggleExpanded?.(); }}
+          className="text-[#666] hover:text-[#ababab]"
+        >
+          {isExpanded ? <ChevronDown size={10} /> : <ChevronRight size={10} />}
+        </button>
+      ) : (
+        <span className="w-[10px] shrink-0" />
+      )}
       <Frame size={10} style={{ color }} />
       <span className="flex-1 truncate text-[11px]">{label}</span>
       <button
@@ -223,6 +225,11 @@ export default function FigmaCanvas() {
   const [visibleFrames, setVisibleFrames] = useState(
     Object.fromEntries(frameRegistry.map((f) => [f.id, true]))
   );
+  const [expandedLayers, setExpandedLayers] = useState({ projects: true });
+
+  const toggleLayerExpanded = useCallback((id) => {
+    setExpandedLayers((prev) => ({ ...prev, [id]: !prev[id] }));
+  }, []);
 
   const canvasRef = useRef(null);
   const isPanning = useRef(false);
@@ -503,10 +510,13 @@ export default function FigmaCanvas() {
                       color={frame.color}
                       isSelected={selectedFrame === frame.id}
                       isVisible={visibleFrames[frame.id]}
+                      hasChildren={frame.id === 'projects'}
+                      isExpanded={!!expandedLayers[frame.id]}
+                      onToggleExpanded={() => toggleLayerExpanded(frame.id)}
                       onClick={() => scrollToFrame(frame.id)}
                       onToggleVisibility={() => toggleVisibility(frame.id)}
                     />
-                    {frame.id === 'projects' && (
+                    {frame.id === 'projects' && expandedLayers.projects && (
                       <div className="ml-1">
                         {data.projects.map((p, i) => (
                           <div
