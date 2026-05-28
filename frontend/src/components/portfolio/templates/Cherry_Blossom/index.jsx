@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import data from "../../../../data/dummy_data.json";
 import {
   Github,
@@ -24,32 +24,41 @@ const CherryBlossom = () => {
 
   const skillCategories = [...new Set(skills.map((skill) => skill.category))];
 
+  const petals = useMemo(() => {
+    return [...Array(50)].map((_, i) => ({
+      id: i,
+      initial: {
+        opacity: 0,
+        y: -50,
+        x: Math.random() * 100 + "vw",
+        rotate: Math.random() * 360,
+        scale: 0.5 + Math.random() * 0.7,
+      },
+      animate: {
+        opacity: [0, 1, 1, 0],
+        y: "110vh",
+        x: `${Math.random() * 100 - 50}vw`,
+        rotate: Math.random() * 1000,
+      },
+      transition: {
+        duration: 10 + Math.random() * 15,
+        repeat: Infinity,
+        ease: "linear",
+        delay: Math.random() * 15,
+      },
+    }));
+  }, []);
+
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-pink-50 via-white to-rose-100 text-gray-800">
       {/* Falling Sakura Petals */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {[...Array(50)].map((_, i) => (
+        {petals.map((petal) => (
           <motion.div
-            key={i}
-            initial={{
-              opacity: 0,
-              y: -50,
-              x: Math.random() * 100 + "vw",
-              rotate: Math.random() * 360,
-              scale: 0.5 + Math.random() * 0.7,
-            }}
-            animate={{
-              opacity: [0, 1, 1, 0],
-              y: "110vh",
-              x: `${Math.random() * 100 - 50}vw`,
-              rotate: Math.random() * 1000,
-            }}
-            transition={{
-              duration: 10 + Math.random() * 15,
-              repeat: Infinity,
-              ease: "linear",
-              delay: Math.random() * 15,
-            }}
+            key={petal.id}
+            initial={petal.initial}
+            animate={petal.animate}
+            transition={petal.transition}
             className="absolute w-5 h-5 bg-pink-300/70 rounded-[100%_10%_100%_10%] shadow-lg"
           />
         ))}
@@ -90,6 +99,7 @@ const CherryBlossom = () => {
                 href={socials.github}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="GitHub Profile"
                 className="p-3 rounded-full bg-white shadow-md hover:scale-110 transition duration-300"
               >
                 <Github />
@@ -99,6 +109,7 @@ const CherryBlossom = () => {
                 href={socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn Profile"
                 className="p-3 rounded-full bg-white shadow-md hover:scale-110 transition duration-300"
               >
                 <Linkedin />
@@ -108,6 +119,7 @@ const CherryBlossom = () => {
                 href={socials.twitter}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Twitter Profile"
                 className="p-3 rounded-full bg-white shadow-md hover:scale-110 transition duration-300"
               >
                 <Twitter />
@@ -115,6 +127,7 @@ const CherryBlossom = () => {
 
               <a
                 href={`mailto:${socials.email}`}
+                aria-label="Email Me"
                 className="p-3 rounded-full bg-white shadow-md hover:scale-110 transition duration-300"
               >
                 <Mail />
@@ -281,6 +294,7 @@ const CherryBlossom = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`View ${project.title} live demo`}
                       className="flex items-center gap-2 text-pink-600 hover:text-pink-800 transition"
                     >
                       <ExternalLink size={18} />
@@ -291,6 +305,7 @@ const CherryBlossom = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`View ${project.title} source code on GitHub`}
                       className="flex items-center gap-2 text-gray-700 hover:text-black transition"
                     >
                       <Github size={18} />
@@ -413,6 +428,7 @@ const CherryBlossom = () => {
             href={socials.github}
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub Profile"
             className="hover:text-pink-500 transition duration-300"
           >
             <Github />
@@ -422,6 +438,7 @@ const CherryBlossom = () => {
             href={socials.linkedin}
             target="_blank"
             rel="noreferrer"
+            aria-label="LinkedIn Profile"
             className="hover:text-pink-500 transition duration-300"
           >
             <Linkedin />
@@ -431,6 +448,7 @@ const CherryBlossom = () => {
             href={socials.twitter}
             target="_blank"
             rel="noreferrer"
+            aria-label="Twitter Profile"
             className="hover:text-pink-500 transition duration-300"
           >
             <Twitter />
