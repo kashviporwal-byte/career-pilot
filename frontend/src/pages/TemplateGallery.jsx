@@ -11,11 +11,8 @@ import ArchitectureBlueprintHero from "../components/portfolio/templates/Archite
 import GeometricShapesAbout from "../components/portfolio/templates/Geometric_Shapes/About";
 import GeometricShapesHero from "../components/portfolio/templates/Geometric_Shapes/Hero";
 import LiquidGlass from "../components/portfolio/templates/Liquid_Glass/index";
-<<<<<<< feat/midnight-gradient-template
 import MidnightGradient from "../components/portfolio/templates/Midnight_Gradient/index";
-=======
 import PlayingCardsPortfolio from "../components/portfolio/templates/Playing_Cards";
->>>>>>> main
 import Navbar from '../components/Navbar'
 import { X } from "lucide-react";
 // import Hero from "../components/portfolio/templates/Holographic/Hero";
@@ -456,7 +453,6 @@ export default function TemplateGallery() {
         </div>
       </div>
 
-<<<<<<< feat/midnight-gradient-template
       {/* Midnight Gradient */}
       <div className="mt-12">
         <div className="mb-4 flex items-center gap-3 px-1">
@@ -467,7 +463,7 @@ export default function TemplateGallery() {
         </div>
         <div className="overflow-hidden rounded-2xl border border-border">
           <MidnightGradient />
-=======
+
       {/* Playing Cards Theme */}
       <div className="mt-12">
         <div className="mb-4 flex items-center gap-3 px-1">
@@ -478,7 +474,7 @@ export default function TemplateGallery() {
         </div>
         <div className="overflow-hidden rounded-2xl border border-emerald-500/20">
           <PlayingCardsPortfolio />
->>>>>>> main
+          
         </div>
       </div>
 
