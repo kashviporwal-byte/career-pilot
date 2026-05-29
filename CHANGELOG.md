@@ -1,3 +1,10 @@
+# [1.90.0](https://github.com/anurag3407/career-pilot/compare/v1.89.0...v1.90.0) (2026-05-29)
+
+
+### Features
+
+* add complete Solar Eclipse portfolio template ([3fbc463](https://github.com/anurag3407/career-pilot/commit/3fbc4634c38c75df636b0586c33e2b2cb0447f90))
+
 # [1.89.0](https://github.com/anurag3407/career-pilot/compare/v1.88.0...v1.89.0) (2026-05-29)
 
 
