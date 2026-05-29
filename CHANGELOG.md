@@ -1,3 +1,10 @@
+## [1.78.3](https://github.com/anurag3407/career-pilot/compare/v1.78.2...v1.78.3) (2026-05-29)
+
+
+### Bug Fixes
+
+* auth pages break on mobile viewports below 360px width ([e86c7d9](https://github.com/anurag3407/career-pilot/commit/e86c7d9104d02588549c616baed2ae8f398f0a8d)), closes [#2299](https://github.com/anurag3407/career-pilot/issues/2299)
+
 ## [1.78.2](https://github.com/anurag3407/career-pilot/compare/v1.78.1...v1.78.2) (2026-05-29)
 
 
