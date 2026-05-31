@@ -1,3 +1,10 @@
+# [1.111.0](https://github.com/anurag3407/career-pilot/compare/v1.110.0...v1.111.0) (2026-05-31)
+
+
+### Features
+
+* add Horizontal_Journey changes ([7a75d7f](https://github.com/anurag3407/career-pilot/commit/7a75d7f27572665bdb439a027311467f92066049))
+
 # [1.110.0](https://github.com/anurag3407/career-pilot/compare/v1.109.0...v1.110.0) (2026-05-31)
 
 
