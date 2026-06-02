@@ -719,6 +719,8 @@ const [hoveredCard, setHoveredCard] = useState(null);
         </div>
         <div className="rounded-2xl" style={{ height: 640, overflowY: "auto", overflowX: "hidden", transform: "translate(0)", position: "relative", border: "1px solid rgba(139,37,0,.2)" }}>
           <TypewriterEffect />
+        </div>
+      </div>
       {/* Chromatic Glitch — sandboxed fixed-nav frame */}
       <div className="mt-12">
         <div className="mb-4 flex items-center gap-3 px-1">
