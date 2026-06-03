@@ -703,6 +703,9 @@ const [hoveredCard, setHoveredCard] = useState(null);
         <div className="rounded-2xl border border-fuchsia-500/20"
           style={{ height: 640, overflowY: "auto", overflowX: "hidden", transform: "translate(0)", position: "relative" }}>
           <PsychedelicSwirl />
+            </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <MidnightGradient />
         </div>
       </div>
 
