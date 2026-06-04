@@ -61,21 +61,6 @@ function TemplatePreviewFrame({ label, badgeColor, children }) {
     </div>
   );
 }
-import { templates } from '../data/templates';
-import { motion, AnimatePresence } from "framer-motion";
-import { Moon, Sun, ChevronDown, Check, Eye, Star, Sparkles } from "lucide-react";
-import LiquidGlass from "../components/portfolio/templates/Liquid_Glass/index";
-import MidnightGradient from "../components/portfolio/templates/Midnight_Gradient/index";
-import PlayingCardsPortfolio from "../components/portfolio/templates/Playing_Cards";
-import CherryBlossom from "../components/portfolio/templates/Cherry_Blossom/index";
-import PsychedelicSwirl from "../components/portfolio/templates/Psychedelic_Swirl/index";
-import MemphisPop from "../components/portfolio/templates/Memphis_Pop/index";
-import CassetteMixtape from "../components/portfolio/templates/Cassette_Mixtape/index";
-import TypewriterEffect from "../components/portfolio/templates/Typewriter_Effect/index";
-import ChromaticGlitch from "../components/portfolio/templates/Chromatic_Glitch/index";
-import MagneticDock from "../components/portfolio/templates/Magnetic_Dock/index";
-import { X } from "lucide-react";
-import { useSearchParams } from "react-router-dom";
 // import Hero from "../components/portfolio/templates/Holographic/Hero";
 // import ChooseAdventurePortfolio from "../components/portfolio/templates/Choose_Adventure/index";
 // import RetroProjects from "../components/portfolio/templates/2D_Retro_8bit/Projects";
