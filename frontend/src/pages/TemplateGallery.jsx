@@ -26,6 +26,8 @@ import ChromaticGlitch from "../components/portfolio/templates/Chromatic_Glitch/
 import MagneticDock from "../components/portfolio/templates/Magnetic_Dock/index";
 import { useSearchParams } from "react-router-dom";
 import MorphingBlobs from "../components/portfolio/templates/Morphing_Blobs/index";
+import FantasyRPGContact from "../components/portfolio/templates/Fantasy_RPG/Contact";
+
 
 /* TemplatePreviewFrame — contains each full portfolio template in a
    sandboxed scrollable box. The key trick: CSS `transform` on the outer
@@ -520,6 +522,16 @@ const [hoveredCard, setHoveredCard] = useState(null);
           <h2 className="text-lg font-semibold text-foreground/70">Culinary Restaurant Theme — About Section</h2>
         </div>
         <div className="overflow-hidden rounded-2xl border border-border"><CulinaryAbout /></div>
+      </div>
+
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-400 border border-amber-500/30">Preview</span>
+          <h2 className="text-lg font-semibold text-foreground/70">Fantasy RPG Theme — Contact Section</h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <FantasyRPGContact />
+        </div>
       </div>
       <TemplatePreviewModal
         templateId={previewTemplateId}
