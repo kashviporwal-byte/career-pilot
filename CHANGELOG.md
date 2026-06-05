@@ -1,3 +1,10 @@
+# [1.152.0](https://github.com/anurag3407/career-pilot/compare/v1.151.0...v1.152.0) (2026-06-05)
+
+
+### Features
+
+* **analytics:** add ResumePerformance component and chart.js dependency ([a191b8b](https://github.com/anurag3407/career-pilot/commit/a191b8b508850077fea1425e39be06ea99bd3a1b))
+
 # [1.151.0](https://github.com/anurag3407/career-pilot/compare/v1.150.0...v1.151.0) (2026-06-04)
 
 
