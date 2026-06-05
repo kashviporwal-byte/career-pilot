@@ -32,6 +32,11 @@ const SeverityBadge = ({ severity }) => {
   );
 };
 
+const getIssueKey = (issue) => {
+  if (issue.id) return issue.id;
+  return [issue.severity, issue.rule, issue.element, issue.suggestion].filter(Boolean).join('|');
+};
+
 const AccessibilityReport = ({ report, onRecheck, isLoading }) => {
   if (!report && !isLoading) {
     return (
@@ -56,7 +61,9 @@ const AccessibilityReport = ({ report, onRecheck, isLoading }) => {
     );
   }
 
+  const hasReport = Boolean(report);
   const { score = 100, issues = [] } = report || {};
+  const scoreClassName = score >= 90 ? 'text-emerald-500' : score >= 70 ? 'text-yellow-500' : 'text-red-500';
 
   const issuesBySeverity = issues.reduce((acc, issue) => {
     if (!acc[issue.severity]) {
@@ -79,8 +86,8 @@ const AccessibilityReport = ({ report, onRecheck, isLoading }) => {
           <div className="flex flex-col items-end">
             <span className="text-sm text-muted-foreground">Overall Score</span>
             <div className="flex items-center">
-              <span className={`text-2xl font-bold ${score >= 90 ? 'text-emerald-500' : score >= 70 ? 'text-yellow-500' : 'text-red-500'}`}>
-                {score}%
+              <span className={`text-2xl font-bold ${hasReport ? scoreClassName : 'text-muted-foreground'}`}>
+                {hasReport ? `${score}%` : '--'}
               </span>
             </div>
           </div>
@@ -119,8 +126,8 @@ const AccessibilityReport = ({ report, onRecheck, isLoading }) => {
                   {severity} Issues ({severityIssues.length})
                 </h4>
                 <div className="space-y-3">
-                  {severityIssues.map((issue, index) => (
-                    <div key={index} className="p-4 rounded-lg border border-border bg-background/50 hover:bg-accent/50 transition-colors">
+                  {severityIssues.map((issue) => (
+                    <div key={getIssueKey(issue)} className="p-4 rounded-lg border border-border bg-background/50 hover:bg-accent/50 transition-colors">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center space-x-3">
                           <SeverityBadge severity={issue.severity} />
