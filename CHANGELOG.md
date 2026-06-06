@@ -1,3 +1,15 @@
+# [1.165.0](https://github.com/anurag3407/career-pilot/compare/v1.164.0...v1.165.0) (2026-06-06)
+
+
+### Bug Fixes
+
+* apply CodeAnt review fixes to Hero section ([d549565](https://github.com/anurag3407/career-pilot/commit/d5495658bbe60add2807717fda019c5866aec362))
+
+
+### Features
+
+* implement Hero section for Sports Athletic portfolio template ([c35f3ca](https://github.com/anurag3407/career-pilot/commit/c35f3ca8c559ef808f88d32efb367da575beb801))
+
 # [1.164.0](https://github.com/anurag3407/career-pilot/compare/v1.163.1...v1.164.0) (2026-06-06)
 
 
