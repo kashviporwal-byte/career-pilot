@@ -4,6 +4,26 @@
 ### Bug Fixes
 
 * add loading/error feedback to contact form ([cc559ba](https://github.com/Gurkaran18/career-pilot/commit/cc559ba2c8fa0fdf5f963964612a9316e98e5cce))
+# [1.190.0](https://github.com/anurag3407/career-pilot/compare/v1.189.0...v1.190.0) (2026-06-08)
+
+
+### Features
+
+* implement brutalist zine collage portfolio template [#3258](https://github.com/anurag3407/career-pilot/issues/3258) ([5a8330f](https://github.com/anurag3407/career-pilot/commit/5a8330fbf357f0a87d25e942484e75fc8e9673c5))
+
+# [1.189.0](https://github.com/anurag3407/career-pilot/compare/v1.188.0...v1.189.0) (2026-06-08)
+
+
+### Features
+
+* add smart resume content consistency checker [#3351](https://github.com/anurag3407/career-pilot/issues/3351) ([85ce056](https://github.com/anurag3407/career-pilot/commit/85ce056ee40b6b6e5b2ad375aa53b322c7595e3c))
+
+# [1.188.0](https://github.com/anurag3407/career-pilot/compare/v1.187.1...v1.188.0) (2026-06-08)
+
+
+### Features
+
+* Add top-level AppErrorBoundary to catch unhandled route errors ([8a056d2](https://github.com/anurag3407/career-pilot/commit/8a056d21873219bd4f7f4527a0576a6ce5c913ec)), closes [#1011](https://github.com/anurag3407/career-pilot/issues/1011)
 
 ## [1.187.1](https://github.com/anurag3407/career-pilot/compare/v1.187.0...v1.187.1) (2026-06-08)
 
