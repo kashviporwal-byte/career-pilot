@@ -645,7 +645,7 @@ for (const part of parts) {
     setEnhancing(false)
   }
     }
-}
+
 
   const handleGeneratePortfolio = async () => {
     setGeneratingPortfolio(true)
