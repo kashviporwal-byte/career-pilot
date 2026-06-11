@@ -1,3 +1,15 @@
+# [1.222.0](https://github.com/anurag3407/career-pilot/compare/v1.221.0...v1.222.0) (2026-06-11)
+
+
+### Bug Fixes
+
+* address bot review feedback for null checks and node:test runner ([7dfa7d6](https://github.com/anurag3407/career-pilot/commit/7dfa7d6d4e7311ca1006a522765f82b7692fee39))
+
+
+### Features
+
+* add robust Zod request validation middleware with unit tests ([a9388fb](https://github.com/anurag3407/career-pilot/commit/a9388fbc66f71636200cb44e1343ab1c083c01a5))
+
 # [1.221.0](https://github.com/anurag3407/career-pilot/compare/v1.220.0...v1.221.0) (2026-06-11)
 
 
